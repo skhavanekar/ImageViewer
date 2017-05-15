@@ -159,6 +159,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
             swipeToDismissRecognizer.addTarget(self, action: #selector(scrollViewDidSwipeToDismiss))
             swipeToDismissRecognizer.delegate = self
             view.addGestureRecognizer(swipeToDismissRecognizer)
+            swipeToDismissRecognizer.require(toFail: doubleTapRecognizer)
         }
     }
 
@@ -523,8 +524,10 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
                     self?.scrollView.zoomScale = 1
 
                     //rotate the image view
-                    self?.itemView.transform = deviceRotationTransform()
-
+                    if UIApplication.isPortraitOnly == true {
+                        self?.itemView.transform = deviceRotationTransform()
+                    }
+                    
                     //position the image view to starting center
                     self?.itemView.bounds = displacedView.bounds
                     self?.itemView.center = displacedView.convertPoint(displacedView.boundsCenter, toView: self!.view)
