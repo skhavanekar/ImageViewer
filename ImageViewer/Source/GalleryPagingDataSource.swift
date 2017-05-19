@@ -96,7 +96,7 @@ final class GalleryPagingDataSource: NSObject, UIPageViewControllerDataSource {
 
         case .custom(let fetchImageBlock, let itemViewControllerBlock):
 
-            guard let itemController = itemViewControllerBlock(itemIndex, itemsDataSource.itemCount(), fetchImageBlock, configuration, isInitial) as? ItemController, let vc = itemController as? UIViewController else { return UIViewController() }
+            guard let itemController = itemViewControllerBlock(itemIndex, itemsDataSource.itemCount(), fetchImageBlock, configuration, isInitial, scrubber) as? ItemController, let vc = itemController as? UIViewController else { return UIViewController() }
 
             itemController.delegate = itemControllerDelegate
             itemController.displacedViewsDataSource = displacedViewsDataSource

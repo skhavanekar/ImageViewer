@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 
                 let myFetchImageBlock: FetchImageBlock = { $0(imageView.image!) }
 
-                let itemViewControllerBlock: ItemViewControllerBlock = { index, itemCount, fetchImageBlock, configuration, isInitialController in
+                let itemViewControllerBlock: ItemViewControllerBlock = { (index, itemCount, fetchImageBlock, configuration, isInitialController, nil) in
 
                     return AnimatedViewController(index: index, itemCount: itemCount, fetchImageBlock: myFetchImageBlock, configuration: configuration, isInitialController: isInitialController)
                 }
