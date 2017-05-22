@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
 
-    static func circlePlayButton(_ diameter: CGFloat) -> UIButton {
+    public static func circlePlayButton(_ diameter: CGFloat) -> UIButton {
 
         let button = UIButton(type: .custom)
         button.frame = CGRect(origin: .zero, size: CGSize(width: diameter, height: diameter))
