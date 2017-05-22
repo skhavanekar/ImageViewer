@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SwipeToDismiss {
+public enum SwipeToDismiss {
 
     case horizontal
     case vertical
