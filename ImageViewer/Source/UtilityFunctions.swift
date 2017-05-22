@@ -102,7 +102,7 @@ private func rotationAngleToMatchDeviceOrientation(_ orientation: UIDeviceOrient
     return desiredRotationAngle
 }
 
-func rotationAdjustedBounds() -> CGRect {
+public func rotationAdjustedBounds() -> CGRect {
 
     let applicationWindow = UIApplication.shared.delegate?.window?.flatMap { $0 }
     guard let window = applicationWindow else { return UIScreen.main.bounds }

@@ -415,7 +415,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
 
     // MARK: - Present/Dismiss transitions
 
-    public func presentItem(alongsideAnimation: () -> Void, completion: @escaping () -> Void) {
+    open func presentItem(alongsideAnimation: () -> Void, completion: @escaping () -> Void) {
 
         guard isAnimating == false else { return }
         isAnimating = true
