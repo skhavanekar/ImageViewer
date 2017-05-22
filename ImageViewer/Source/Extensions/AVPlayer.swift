@@ -8,9 +8,9 @@
 
 import AVFoundation
 
-extension AVPlayer {
+public extension AVPlayer {
 
-    func isPlaying() -> Bool {
+    public func isPlaying() -> Bool {
 
         return (self.rate != 0.0 && self.status == .readyToPlay)
     }

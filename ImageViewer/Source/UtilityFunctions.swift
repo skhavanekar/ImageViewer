@@ -13,7 +13,7 @@ import AVFoundation
 /// certain size and the question is, what would have to be its size, so that it would fit
 /// it into some rect of some size ..given we would want to keep the content rects aspect ratio.
 
-func aspectFitSize(forContentOfSize contentSize: CGSize, inBounds bounds: CGSize) -> CGSize {
+public func aspectFitSize(forContentOfSize contentSize: CGSize, inBounds bounds: CGSize) -> CGSize {
 
     return AVMakeRect(aspectRatio: contentSize, insideRect: CGRect(origin: CGPoint.zero, size: bounds)).size
 }

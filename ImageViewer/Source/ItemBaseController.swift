@@ -28,7 +28,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
     public let index: Int
     public var isInitialController = false
     let itemCount: Int
-    var swipingToDismiss: SwipeToDismiss?
+    public var swipingToDismiss: SwipeToDismiss?
     fileprivate var isAnimating = false
     fileprivate var fetchImageBlock: FetchImageBlock
 

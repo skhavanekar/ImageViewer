@@ -11,7 +11,7 @@ import AVFoundation
 
 open class VideoView: UIView {
 
-    let previewImageView = UIImageView()
+    public let previewImageView = UIImageView()
     open var image: UIImage? { didSet { previewImageView.image = image } }
     open var player: AVPlayer? {
 

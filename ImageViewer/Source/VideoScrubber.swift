@@ -153,23 +153,23 @@ open class VideoScrubber: UIControl {
         }
     }
 
-    func play() {
+    public func play() {
 
         self.player?.play()
     }
 
-    func replay() {
+    public func replay() {
 
         self.player?.seek(to: CMTime(value:0 , timescale: 1))
         self.player?.play()
     }
 
-    func pause() {
+    public func pause() {
 
         self.player?.pause()
     }
 
-    func seekToTime() {
+    public func seekToTime() {
 
         let progress = scrubber.value / scrubber.maximumValue //naturally will be between 0 to 1
 
