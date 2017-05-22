@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-class VideoView: UIView {
+open class VideoView: UIView {
 
     let previewImageView = UIImageView()
-    var image: UIImage? { didSet { previewImageView.image = image } }
-    var player: AVPlayer? {
+    open var image: UIImage? { didSet { previewImageView.image = image } }
+    open var player: AVPlayer? {
 
         willSet {
 
@@ -38,7 +38,7 @@ class VideoView: UIView {
         }
     }
 
-    override class var layerClass : AnyClass {
+    override open class var layerClass : AnyClass {
         return AVPlayerLayer.self
     }
 
@@ -56,7 +56,7 @@ class VideoView: UIView {
         previewImageView.clipsToBounds = true
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -66,7 +66,7 @@ class VideoView: UIView {
         player?.removeObserver(self, forKeyPath: "rate")
     }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
         if let status = self.player?.status, let rate = self.player?.rate  {
 
