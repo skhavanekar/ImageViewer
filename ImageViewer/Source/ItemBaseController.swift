@@ -484,14 +484,14 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         }
     }
 
-    func displacementTargetSize(forSize size: CGSize) -> CGSize {
+    open func displacementTargetSize(forSize size: CGSize) -> CGSize {
 
         let boundingSize = rotationAdjustedBounds().size
 
         return aspectFitSize(forContentOfSize: size, inBounds: boundingSize)
     }
 
-    func findVisibleDisplacedView() -> DisplaceableView? {
+    open func findVisibleDisplacedView() -> DisplaceableView? {
 
         guard let displacedView = displacedViewsDataSource?.provideDisplacementItem(atIndex: index) else { return nil }
 
@@ -502,7 +502,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         return isVisibleEnough ? displacedView : nil
     }
 
-    public func dismissItem(alongsideAnimation: () -> Void, completion: @escaping () -> Void) {
+    open func dismissItem(alongsideAnimation: () -> Void, completion: @escaping () -> Void) {
 
         guard isAnimating == false else { return }
         isAnimating = true
@@ -612,7 +612,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         }
     }
 
-    public func closeDecorationViews(_ duration: TimeInterval) {
+    open func closeDecorationViews(_ duration: TimeInterval) {
         // stub
     }
 }
